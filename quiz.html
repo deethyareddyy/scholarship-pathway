@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+    <title>Quiz - Full Motion</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .category-result {
+            display: none;
+            margin-top: 20px;
+        }
+        .mentor-list {
+            margin-top: 20px;
+            display: none;
+        }
+        .quiz-section {
+            margin-bottom: 15px;
+        }
+        .quiz-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .quiz-section select, .quiz-section input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            color: black;
+        }
+        
+        .button-fit {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+        .button-fit:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body id="top">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- <a href="#menu">Menu</a> -->
+        <div class = "navbuttons">
+            <a href="index.html" class="button1">
+              <button>Home</button>
+            </a>
+            <a href="quiz.html" class="button1">
+              <button>Quiz</button>
+            </a>
+            <a href="mentors.html" class="button1">
+              <button>Mentors List</button>
+            </a>
+            <a href="Scholarships.html" class="button1">
+                <button>Scholarships</button>
+              </a>
+            </div>
+    </nav>
+<!-- <div id="nav">
+    <a href="index.html">Home</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="mentors.html">Mentors List</a>
+    <a href="Scholarships.html">Scholarships</a>
+</div> -->
+
+    <!-- Banner -->
+    <section id="banner" data-video="images/banner">
+        <div class="inner">
+            <header>
+                <h1>Which mentors and scholarships do you seek?</h1>
+                <p> Get matched with <a href="mentors.html">mentors</a> based on scholarship categories you have a high chance of winning!</p>
+            </header>
+            <a href="#main" class="more">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <!-- Quiz Section -->
+            <section id="quiz">
+                <header>
+                    <h2>Mentee-Mentor Matching Quiz</h2>
+                </header>
+                <form id="quizForm">
+                    <div class="quiz-section">
+                        <label for="question1">What are your main areas of academic interest or intended field of study?</label>
+                        <select id="question1" name="question1">
+                            <option value="STEM">STEM</option>
+                            <option value="social_sciences">Social Sciences</option>
+                            <option value="law">Law</option>
+                            <option value="medicine">Medicine</option>
+                            <option value="education">Education</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    <div class="quiz-section">
+                        <label for="question2">Are you involved in any extracurricular activities, clubs, or sports?</label>
+                        <select id="question2" name="question2">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="quiz-section">
+                        <label for="question3">Do you have any leadership roles or volunteer experiences?</label>
+                        <select id="question3" name="question3">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="quiz-section">
+                        <label for="question4">Are you a member of any underrepresented racial or ethnic groups?</label>
+                        <select id="question4" name="question4">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="quiz-section">
+                        <label for="question5">Do you identify as a member of any underrepresented gender or LGBTQIA+ groups?</label>
+                        <select id="question5" name="question5">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="quiz-section">
+                        <label for="question6">Are you a U.S. citizen or resident, or do you require international scholarships?</label>
+                        <select id="question6" name="question6">
+                            <option value="us_citizen">U.S. Citizen</option>
+                            <option value="us_resident">U.S. Resident</option>
+                            <option value="neither">Neither</option>
+                        </select>
+                    </div>
+                    <div class="quiz-section">
+                        <label for="question7">Are you involved in any community organizations or cultural groups?</label>
+                        <select id="question7" name="question7">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="quiz-section">
+                        <label for="question8">Which category best describes your current status?</label>
+                        <select id="question8" name="question8">
+                            <option value="high_school">High School</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="graduate">Graduate</option>
+                            <option value="postdoctoral">Postdoctoral</option>
+                            <option value="professional">Professional</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="submitQuiz()" class="button-fit">Submit</button>
+                </form>
+            </section>
+
+            <section class="category-result" id="categoryResult">
+                <header>
+                    <h2>Top Scholarship Categories for You</h2>
+                </header>
+                <div id="categories"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <h2>How does this feature work?</h2>
+            <p>With this feature, we want users to optimize their chances of gaining more money for school and make the most of thir early career.
+                Once you are matched with your top 3 categories, you can access the scholarships and see which ones you should apply for based on the preferences
+                indicating which ones you have a higher chance of winning. In addition, you can view the mentors that are best for the categories you matched with.
+            </p>
+            <ul class="icons">
+
+        </div>
+    </footer>
+    <div class="copyright">
+        Good luck with your educational and scholarship journey 💫
+    </div>
+
+<script src="assets/js/quiz.js"></script>
+</body>
+</html>

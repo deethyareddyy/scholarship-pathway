@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141d2b;
+            color: white;
+        }
+
+        header {
+            background-color: #141d2b;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #141d2b;
+            color: white;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            background-color: rgb(177, 190, 235);
+            color: black;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: rgb(177, 190, 235);
+            color: black;
+
+        }
+
+        .filters {
+            margin: 20px 0;
+        }
+
+        .filters label, .filters select {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: rgb(24, 24, 29);
+            color: white;
+        }
+
+        .scholarship-list {
+            margin: 20px 0;
+            background-color: rgb(39, 37, 63);
+            color: white;
+        }
+
+        .scholarship-item {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: rgb(30, 29, 36);
+        }
+
+        .scholarship-item h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .scholarship-item p {
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .navbuttons {
+            /* font-family: ; */
+            width: 100%;
+            display: flex;
+            gap: 10px; /* Optional: adds space between buttons */
+            margin-left: auto; /* Pushes the buttons to the right */
+        }
+
+        .navbuttons a {
+            text-decoration: none;
+        }
+
+        .navbuttons button {
+            padding: 5px 10px; /* Smaller padding to make the buttons smaller */
+            font-size: 14px; /* Smaller font size */
+            cursor: pointer;
+            border: none; /* Removes borders */
+            box-shadow: inset 0 0 0 2px transparent;
+            color: #ffffff;
+            background-color: transparent; /* Removes background color */
+        }
+
+        .navbuttons button:hover {
+            background-color: #e0e0e0; /* Optional: adds a hover effect */
+        }
+
+        .button1 {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            -moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+            -webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+            -ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+            background-color: transparent; /* Removes background color */
+            border: 0;
+            border-radius: 0;
+            box-shadow: inset 0 0 0 2px transparent;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 0.8em;
+            font-weight: 600;
+            height: 3.5em;
+            letter-spacing: 0.25em;
+            line-height: 3.5em;
+            padding: 0 1.75em;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+<body id="top">
+
+    <nav>
+        <div class = "navbuttons">
+            <a href="index.html" class="button1">
+              <button>Home</button>
+            </a>
+            <a href="quiz.html" class="button1">
+              <button>Quiz</button>
+            </a>
+            <a href="mentors.html" class="button1">
+              <button>Mentors List</button>
+            </a>
+            <a href="Scholarships.html" class="button1">
+                <button>Scholarships</button>
+              </a>
+            </div>
+    </nav>
+
+    <section id="banner" data-video="images/banner"><div class="inner">
+        <header><h1>SCHOLARSHIPS</h1>
+            <p>Explore different scholarships based on the categories! </P>
+        </header>
+    </div> 
+</section><!-- Main --><div id="main">
+    
+    <main>
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search scholarships...">
+            </div>
+            
+            <div class="filters">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="all">All</option>
+                    <option value="graduate">Graduate</option>
+                    <option value="postdoctoral">Postdoctoral</option>
+                    <option value="professional">Professional</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="highschool">High School</option>
+                </select>
+            </div>
+            
+            <div class="scholarship-list" id="scholarship-list">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+         <div class="copyright">
+        Good luck with your educational and scholarship journey 💫
+         </div>
+    </footer>
+
+    <script>
+        const scholarships = [
+            { name: "Fulbright Foreign Student Program", amount: "varied", description: "Offers grants for graduate students, young professionals, and artists to study and conduct research in the US.", category: "graduate" },
+            { name: "AAUW International Fellowships", amount: "varied", description: "Provides funding for women pursuing full-time graduate or postdoctoral study in the US.", category: "postdoctoral" },
+            { name: "Hubert Humphrey Fellowship Program", amount: "varied", description: "Provides a year of professional enrichment in the US for experienced professionals from designated countries.", category: "professional" },
+            { name: "Amelia Earhart Fellowship", amount: "varied", description: "Awards for women pursuing Ph.D./doctoral degrees in aerospace-related sciences and engineering.", category: "graduate" },
+            { name: "Knight-Hennessy Scholars Program", amount: "varied", description: "Offers funding for graduate education at Stanford University for students from all disciplines.", category: "graduate" },
+            { name: "Yale Young Global Scholars", amount: "varied", description: "An academic and leadership program for high school students from around the world.", category: "highschool" },
+            { name: "Rotary Peace Fellowship", amount: "varied", description: "Fully funded academic fellowships for students to pursue a master’s degree or professional development certificate in peace and conflict resolution.", category: "graduate" },
+            { name: "Clark University Global Scholars Program", amount: "varied", description: "Scholarships for international students at Clark University.", category: "undergraduate" },
+            { name: "AAUW Selected Professions Fellowships", amount: "varied", description: "Grants for women pursuing full-time study in a master's or professional degree program in the US.", category: "graduate" },
+            { name: "Dartmouth College King Scholar Leadership Program", amount: "varied", description: "Scholarships for international students with a commitment to addressing poverty in their home countries.", category: "undergraduate" },
+            { name: "American University Emerging Global Leader Scholarship", amount: "varied", description: "For high-achieving international students who wish to pursue a bachelor’s degree.", category: "undergraduate" },
+            { name: "The NextGen Scholarship", amount: "varied", description: "For international students and non-citizens living in the US who are pursuing higher education.", category: "undergraduate" },
+            { name: "Stanford University Scholarships", amount: "varied", description: "Financial aid opportunities for international students at Stanford.", category: "undergraduate" },
+            { name: "Global Scholars Program at the University of Portland", amount: "varied", description: "Awards for international students demonstrating exceptional academic and leadership skills.", category: "undergraduate" },
+            { name: "University of Chicago Odyssey Scholarship", amount: "varied", description: "Financial aid program for students from low-income families, including international students.", category: "undergraduate" },
+            { name: "Michigan State University International Tuition Grant", amount: "varied", description: "Provides funding for international students based on academic performance and financial need.", category: "undergraduate" },
+            { name: "Clark University Presidential LEEP Scholarships", amount: "varied", description: "Full tuition, room, and board for four years for international students with leadership and academic potential.", category: "undergraduate" },
+            { name: "Emory University Scholar Programs", amount: "varied", description: "Merit-based scholarships for both US and international students.", category: "undergraduate" },
+            { name: "University of Oregon International Cultural Service Program (ICSP) Scholarship", amount: "varied", description: "Provides partial to full tuition scholarships for international students.", category: "undergraduate" },
+            { name: "Columbia University Scholarships", amount: "varied", description: "Financial aid programs for international students at Columbia.", category: "undergraduate" },
+            { name: "University of Miami Stamps Scholarship", amount: "varied", description: "For exceptional international students, covering full tuition and expenses.", category: "undergraduate" },
+            { name: "University of the Pacific Powell Scholars Program", amount: "varied", description: "Financial aid for international students at the University of the Pacific.", category: "undergraduate" },
+            { name: "Duke University Karsh International Scholarship", amount: "varied", description: "Full funding for international students.", category: "undergraduate" },
+            { name: "New York University Wagner International Scholarships", amount: "varied", description: "Provides partial to full tuition scholarships to all students, including international students.", category: "undergraduate" },
+            { name: "University of Arkansas Chancellor's Scholarship", amount: "varied", description: "Offers scholarships for international students based on academic performance and need.", category: "undergraduate" },
+            { name: "East Tennessee State University International Students Academic Merit Scholarship", amount: "varied", description: "Reduces tuition for international students.", category: "undergraduate" },
+            { name: "Illinois Wesleyan University President's Scholarship", amount: "varied", description: "Merit-based scholarships for international students.", category: "undergraduate" }
+        ];
+
+        function displayScholarships(scholarships) {
+            const scholarshipList = document.getElementById('scholarship-list');
+            scholarshipList.innerHTML = '';
+            scholarships.forEach(scholarship => {
+                const item = document.createElement('div');
+                item.className = 'scholarship-item';
+                item.dataset.category = scholarship.category;
+                item.dataset.amount = scholarship.amount;
+                item.innerHTML = `
+                    <h2>${scholarship.name}</h2>
+                    <p>Amount: ${scholarship.amount}</p>
+                    <p>Description: ${scholarship.description}</p>
+                `;
+                scholarshipList.appendChild(item);
+            });
+        }
+
+        function filterScholarships() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const category = document.getElementById('category').value;
+
+            document.querySelectorAll('.scholarship-item').forEach(function(item) {
+                const name = item.querySelector('h2').textContent.toLowerCase();
+                const itemCategory = item.dataset.category;
+
+                const matchesQuery = name.includes(query);
+                const matchesCategory = category === 'all' || itemCategory === category;
+
+                item.style.display = matchesQuery && matchesCategory ? 'block' : 'none';
+            });
+        }
+
+        document.getElementById('search').addEventListener('input', filterScholarships);
+        document.getElementById('category').addEventListener('change', filterScholarships);
+
+        displayScholarships(scholarships);
+    </script>
+</body>
+</html>
