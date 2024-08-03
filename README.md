@@ -32,4 +32,4 @@ Scholarship Pathways is a website focused on helping individuals have a higher c
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Acknowledgements 💻
-Contributors to this project: Aprajita, Benita, Deethya, Elizabeth
+Contributors to this project: Aparajita, Benita, Deethya, Elizabeth
