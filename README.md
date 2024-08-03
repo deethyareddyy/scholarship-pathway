@@ -17,14 +17,14 @@ Scholarship Pathways is a website focused on helping individuals have a higher c
 
 ## Installation 🌏
 1. Clone the repository
-git clone https://github.com/yourusername/Scholarship-Pathways.git
+- git clone https://github.com/yourusername/Scholarship-Pathways.git
 
 2. Open the project in VS Code
-cd Scholarship-Pathways
-code .
+- cd Scholarship-Pathways
+- code .
 
 3. Make sure you have Node.js installed
-npm install
+- npm install
 
 4. From there, you can see the website and understand the code behind it
 
@@ -32,4 +32,4 @@ npm install
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Acknowledgements 💻
-Contributors to this project: Benita, Deethya, Elizabeth, Aprajita
+Contributors to this project: Aprajita, Benita, Deethya, Elizabeth
